@@ -64,7 +64,6 @@ export default function Homepage() {
           <p className='text-black-700 text-lg font-regular mt-10'>
             Welcome to <span className='uppercase text-blue-800 font-semibold'>PORTISTAD</span>, the premier online destination for creating professional and polished CVs in minutes. Our user-friendly platform allows you to easily input your personal information, work experience, education, and skills, and our expertly crafted templates will transform your data into a stunning and effective CV.
           </p>
-          
           <p className='mt-20'>
             <span className='text-xl'>From </span> <a href='https://istad.co/' className='text-blue-800 text-2xl font-regular underline italic'>ISTAD</a>
           </p>
