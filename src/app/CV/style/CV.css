@@ -1,0 +1,59 @@
+.cv{
+    width: 595px;
+    height: 962px;
+    border: 1px solid #000000;
+  }
+  .left_cv{
+    width: 210px;
+    height: 907px;
+    margin-top: 30px;
+    margin-left: 1rem;
+    background: #30419D;
+  }
+  .right_cv{
+    width: 19rem;
+    height: 907px;
+    margin-top: 30px;
+    /* margin-left: 1rem; */
+  }
+  .portimg{
+    
+    margin-top: 32px;
+    margin-left: 24px;
+    
+  }
+  img{
+    border-radius: 50%;
+    width: 159px;
+    height: 159px;
+   
+  }
+  .shadow-lg{
+    border: 7px solid #FFFFFF;
+  }
+  body{
+    font-family: 'Inter', sans-serif;
+    background-color: rgb(240, 239, 239);
+    /* background-color: blue; */
+  }
+  .texth{
+    color: #27347D;
+    font-size: 12px;
+  }
+  .skill{
+    font-size: 20px;
+  }
+  .text_li{
+    font-size: 11px;
+    text-decoration: none;
+    color: #000000;
+  }
+  .fa-solid{
+    font-size: 60px;
+    color: #30419D;
+  }
+  .Save{
+    position: absolute;
+    right: 20rem;
+    top: 50rem;
+  }

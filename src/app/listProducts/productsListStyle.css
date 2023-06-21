@@ -1,0 +1,19 @@
+.sidebar a {
+    padding: 1rem;
+    transition: .1s;
+}
+.products {
+    transition: .4s;
+    animation: scale 1s ease-in;
+}
+@keyframes scale {
+    from {
+        transform: scale(0);
+    } to {
+        transform: scale(1);
+    }
+}
+.sidebar a:hover {
+    background-color: rgba(0, 0, 0, 0.281);
+    border-right: 5px solid white;
+}

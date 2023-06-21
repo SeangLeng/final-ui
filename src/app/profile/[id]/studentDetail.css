@@ -1,0 +1,25 @@
+.stu_rigth{
+    /* background-color: aquamarine; */
+    width: 60rem;
+    height: full;
+    margin-top: 30px;
+    margin-left: 20px;
+  }
+  .stu_left{
+    /* background-color: blueviolet; */
+    width: 40rem;
+    height: full;
+    margin-top: 30px;
+    margin-right: 20px;
+  }
+  
+  .studendetail{
+    /* background-color: #30419D; */
+    width: 100%;
+    height: 70rem;
+  }
+  .stuimg{
+    margin-left: 30px;
+    margin-top: 10px;
+  }
+ 

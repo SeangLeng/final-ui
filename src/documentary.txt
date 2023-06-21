@@ -1,0 +1,5 @@
+New node_modules
+
+- npm install next-auth 
+
+- npm install yub

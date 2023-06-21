@@ -1,0 +1,34 @@
+.dark {
+    /* position: relative; */
+    background: linear-gradient(
+      163.68deg,
+      rgba(2, 0, 91, 0.878431) 0%,
+      rgba(1, 0, 29, 0.878431) 54.69%,
+      rgba(1, 0, 29, 0.878431) 100%
+    );
+  
+  }
+  
+   .form {
+  
+    width: 100%;
+    background: transparent;
+  
+  }
+  
+  .form:before{ 
+   position: absolute;
+    content: ' ';
+    width: 100%;
+    height: 100%;
+    top: 0;  
+    left: 0; 
+    background: linear-gradient(260.91deg, rgba(2, 0, 86, 0.28) 0%, rgba(217, 217, 217, 0) 100%);
+    filter: drop-shadow(4px 4px 21px rgba(0, 0, 0, 0.25));
+  
+    backdrop-filter: blur(15px);  
+    z-index: -1;
+    border-radius: 20px;
+   } 
+  
+  
