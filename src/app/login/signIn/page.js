@@ -10,7 +10,7 @@ import { Formik, Form, Field, ErrorMessage } from "formik"
 import * as Yup from 'yup';
 
 export const getUserToCheck = async () => {
-    const request = await fetch(`${API}users`)
+    const request = await fetch(`${API}/users`)
     const response = await request.json();
     return response;
 }

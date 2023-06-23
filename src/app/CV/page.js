@@ -1,12 +1,10 @@
 
 import Head from 'next/head'
 import './style/CV.css'
+import Image from 'next/image'
+import seangleng from '../images/seangleng-profile.jpg'
 
 export default function Home() {
-    <Head>
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.css" rel="stylesheet" />
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100&family=Kantumruy+Pro:ital,wght@1,200&family=Noto+Serif+Khmer:wght@500&display=swap" rel="stylesheet" />
-    </Head>
     return (
         <section >
             <div className='Save'>
@@ -23,7 +21,7 @@ export default function Home() {
                 <div className='cv w-full min-h-96 bg-white grid grid-rows-1 grid-flow-col gap-4'>
                     <div className='col left_cv '>
                         <div className='portimg  '>
-                            <img className='shadow-lg' src="https://d38b044pevnwc9.cloudfront.net/cutout-nuxt/enhancer/1.jpg" />
+                            <Image className='shadow-lg' src={seangleng} />
                             <br />
                             <h1 className='text-2xl text-white font-semibold'>SENG</h1>
                             <p className='text-2xl text-white font-semibold'>SEANG LENG</p>
@@ -70,7 +68,7 @@ export default function Home() {
                             <a className='text_li'>Support team with leader of the UI position</a>
                         </li>
 
-                        <h2 className='skill  mt-4 text-black font-semibold'>Experience</h2>
+                        <h2 className='skill  mt-4 text-black font-semibold'>Education</h2>
                         <p className='bg-black h-1 w-72'></p>
 
                         <p className='texth  mt-4'>Royal university of Phnom Penh - RUPP</p>
@@ -126,8 +124,6 @@ export default function Home() {
                 </div>
 
             </main>
-            <script src="../path/to/flowbite/dist/flowbite.min.js"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
         </section>
 
     )

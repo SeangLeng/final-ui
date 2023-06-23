@@ -1,0 +1,8 @@
+.uploadImage img{
+    filter: brightness(85%);
+    transition: .4s;
+}
+
+.uploadImage:hover .uploadButton{
+    display: block;
+}

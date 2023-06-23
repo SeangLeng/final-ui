@@ -1,3 +1,4 @@
+'use client'
 import Script from 'next/script'
 import thumbnail from "@/app/images/teamShowcase.png"
 import NavbarDashboard from '@/components/navbarDash'
@@ -6,7 +7,7 @@ import DashboardFooter from '@/components/dashboardFooter'
 
 export default function RootLayout({ children }) {
     return (
-        <body>
+        <div>
             <NavbarDashboard />
             <SideBar />
             <div className="p-4 sm:ml-64">
@@ -15,8 +16,7 @@ export default function RootLayout({ children }) {
                 </div>
             </div>
             <DashboardFooter />
-            <Script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></Script>
             <Script src="../node_modules/tw-elements/dist/js/tw-elements.umd.min.js"></Script>
-        </body>
+        </div>
     )
 }

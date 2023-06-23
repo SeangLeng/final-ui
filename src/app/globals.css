@@ -95,7 +95,7 @@ body {
 
 nav {
   transition: .4s;
-  animation: topDown 1s ease-in;
+  animation: topDown 1s ease;
 }
 
 @keyframes topDown {

@@ -28,22 +28,13 @@ export default function Portfoio() {
         <>
             {
                 gateGory.map(e => (
-                    user ? (
-                        <a href='#'>
-                            <div className='products w-[340px]'>
-                                <img src={e ? `${e.image}` : `https://schooloflanguages.sa.edu.au/wp-content/uploads/2017/11/placeholder-profile-sq.jpg`} className='w-[100%]' />
-                                <div className='text-center mt-1'>{e ? `${e.name}` : `name`}</div>
-                            </div>
-                        </a>
-                    ) : (
-                        <a href='/login'>
-                            <div className='products w-[340px]'>
-                                <img src={e ? `${e.image}` : `https://schooloflanguages.sa.edu.au/wp-content/uploads/2017/11/placeholder-profile-sq.jpg`} className='w-[100%]' />
-                                <div className='text-center mt-1'>{e ? `${e.name}` : `name`}</div>
-                            </div>
-                        </a>
 
-                    )
+                    <a href={`/generate/${e.id}`}>
+                        <div className='products w-[340px]'>
+                            <img src={e ? `${e.image}` : `https://schooloflanguages.sa.edu.au/wp-content/uploads/2017/11/placeholder-profile-sq.jpg`} className='w-[100%]' />
+                            <div className='text-center mt-1'>{e ? `${e.name}` : `name`}</div>
+                        </div>
+                    </a>
                 ))
             }
         </>

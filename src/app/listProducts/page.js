@@ -5,7 +5,7 @@ import React, { useEffect, useState } from 'react'
 import secureLocalStorage from 'react-secure-storage';
 
 export async function fetchGatgory() {
-    const req = await fetch("https://run.mocky.io/v3/d2be799d-f768-40b4-ba9a-f94a205472d1")
+    const req = await fetch("https://run.mocky.io/v3/d2be799d-f768-40b4-ba9a-f94a205472d1", { cache: 'force-cache' })
     const res = await req.json();
     return res;
 }
@@ -23,22 +23,14 @@ export default function CVList() {
         <>
             {
                 gateGory.map(e => (
-                    user ? (
-                        <Link href={`/input/${e.id}`}>
-                            <div className='products w-[340px]'>
-                                <img src={e ? `${e.image}` : `https://schooloflanguages.sa.edu.au/wp-content/uploads/2017/11/placeholder-profile-sq.jpg`} className='w-[100%]' />
-                                <div className='text-center mt-1'>{e ? `${e.name}` : `name`}</div>
-                            </div>
-                        </Link>
-                    ) : (
-                        <a href='/login'>
-                            <div className='products w-[340px]'>
-                                <img src={e ? `${e.image}` : `https://schooloflanguages.sa.edu.au/wp-content/uploads/2017/11/placeholder-profile-sq.jpg`} className='w-[100%]' />
-                                <div className='text-center mt-1'>{e ? `${e.name}` : `name`}</div>
-                            </div>
-                        </a>
 
-                    )
+                    <Link href={`/generate/${e.id}`}>
+                        <div className='products w-[340px]'>
+                            <img src={e ? `${e.image}` : `https://schooloflanguages.sa.edu.au/wp-content/uploads/2017/11/placeholder-profile-sq.jpg`} className='w-[100%]' />
+                            <div className='text-center mt-1'>{e ? `${e.name}` : `name`}</div>
+                        </div>
+                    </Link>
+
                 ))
             }
         </>

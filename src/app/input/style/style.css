@@ -1,9 +1,11 @@
-.profileinput{
-    margin-left: 43%;
- 
- }
- .profileuser{
-     
-    margin-top: 23px;
-    border: 20px solid #FFFFFF;
- }
+.bt-upload {
+   position: absolute;
+   top: 250px;
+   left: 44.5%;
+}
+
+.profileuser {
+
+   margin-top: 23px;
+   border: 20px solid #FFFFFF;
+}
