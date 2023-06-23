@@ -34,20 +34,20 @@ export const options = {
     },
 };
 
-const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
+const labels = ['2022', '2023'];
 
 export const data = {
     labels,
     datasets: [
         {
-            label: 'Dataset 1',
+            label: 'frontend',
             data: labels.map(() => faker?.datatype?.number({ min: 0, max: 1000 })),
             backgroundColor: 'rgb(0,0,139)',
         },
         {
-            label: 'Dataset 2',
+            label: 'Backend',
             data: labels.map(() => faker?.datatype?.number({ min: 0, max: 1000 })),
-            backgroundColor: 'rgb(0,0,139)',
+            backgroundColor: 'rgb(0,0,120)',
         },
     ],
 };

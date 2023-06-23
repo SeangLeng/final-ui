@@ -25,19 +25,19 @@ export default function SideBar() {
                         </Link>
                     </li>
                     <li>
-                        <a href="#" className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
+                        <Link href="/dashboard/addnewuser" className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
                             <svg aria-hidden="true" className="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path></svg>
                             <span className="flex-1 ml-3 whitespace-nowrap">Add user</span>
-                        </a>
+                        </Link>
                     </li>
                     <li>
-                        <a href="#" className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
+                        <Link href="/dashboard/message" className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
                             <svg width="25" height="21" viewBox="0 0 25 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M22.9167 0H2.08333C0.93316 0 0 1.00781 0 2.25V18.75C0 19.9922 0.93316 21 2.08333 21H22.9167C24.0668 21 25 19.9922 25 18.75V2.25C25 1.00781 24.0668 0 22.9167 0ZM7.63889 4.5C9.17101 4.5 10.4167 5.84531 10.4167 7.5C10.4167 9.15469 9.17101 10.5 7.63889 10.5C6.10677 10.5 4.86111 9.15469 4.86111 7.5C4.86111 5.84531 6.10677 4.5 7.63889 4.5ZM12.5 15.6C12.5 16.0969 12.066 16.5 11.5278 16.5H3.75C3.21181 16.5 2.77778 16.0969 2.77778 15.6V14.7C2.77778 13.2094 4.0842 12 5.69444 12H5.91146C6.44531 12.2391 7.02691 12.375 7.63889 12.375C8.25087 12.375 8.83681 12.2391 9.36632 12H9.58333C11.1936 12 12.5 13.2094 12.5 14.7V15.6ZM22.2222 13.125C22.2222 13.3313 22.066 13.5 21.875 13.5H15.625C15.434 13.5 15.2778 13.3313 15.2778 13.125V12.375C15.2778 12.1687 15.434 12 15.625 12H21.875C22.066 12 22.2222 12.1687 22.2222 12.375V13.125ZM22.2222 10.125C22.2222 10.3313 22.066 10.5 21.875 10.5H15.625C15.434 10.5 15.2778 10.3313 15.2778 10.125V9.375C15.2778 9.16875 15.434 9 15.625 9H21.875C22.066 9 22.2222 9.16875 22.2222 9.375V10.125ZM22.2222 7.125C22.2222 7.33125 22.066 7.5 21.875 7.5H15.625C15.434 7.5 15.2778 7.33125 15.2778 7.125V6.375C15.2778 6.16875 15.434 6 15.625 6H21.875C22.066 6 22.2222 6.16875 22.2222 6.375V7.125Z" fill="#6B7280" />
                             </svg>
 
                             <span className="flex-1 ml-3 whitespace-nowrap">Message</span>
-                        </a>
+                        </Link>
                     </li>
                 </ul>
             </div>

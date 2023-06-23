@@ -30,7 +30,7 @@ export default function ProfileAside() {
 
                         <div className="sidebar font-medium">
                             <div>
-                                <Link href="#" className={
+                                <Link href="/generate" className={
                                     pathname === "/information"
                                         ? 'text-white dark:text-white flex items-center bg-[#00000048] border-r-white border-r-8 hover:bg-[#00000048] hover:border-r-white hover:border-r-8'
                                         : 'hover:bg-[#00000048] hover:border-r-white hover:border-r-8 bg-none text-white flex items-center'

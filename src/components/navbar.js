@@ -2,34 +2,11 @@
 import React, { useEffect, useState } from 'react'
 import logo2 from '../app/images/logo-project.jpg'
 import Image from 'next/image'
-import secureLocalStorage from "react-secure-storage";
+import { useGetUserQuery } from "@/store/features/user/userApiSlice";
+import Link from 'next/link';
 
 export default function Navbar() {
 
-    const [user, setUser] = useState([])
-    const [loading, setLoading] = useState(true)
-
-    const getAllUser = async () => {
-        try {
-            const item = secureLocalStorage.getItem("user");
-            const users = JSON.parse(item)
-            setUser(users);
-        } catch (error) {
-            setLoading(true)
-            console.log(error)
-        }
-    }
-
-    useEffect(() => {
-        getAllUser();
-    }, [])
-
-    console.log(user)
-
-    function reset() {
-        secureLocalStorage.clear();
-        location.reload();
-    }
 
     function dashboardRender(role) {
         if (role === "admin") return (
@@ -126,9 +103,50 @@ export default function Navbar() {
                                     Us</a>
                             </li>
                         </ul>
-                        {
-                            user ? haveUser() : noUser()
-                        }
+                        <div className="flex items-center md:order-2">
+                            <button type="button" data-dropdown-toggle="language-dropdown-menu" className="inline-flex items-center font-medium justify-center px-4 py-2 text-sm text-gray-900 dark:text-white rounded-lg cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white">
+                                <svg width="26" height="15" viewBox="0 0 26 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="26" height="3" rx="1.5" fill="#D9D9D9" />
+                                    <rect x="4" y="6" width="22" height="3" rx="1.5" fill="#D9D9D9" />
+                                    <rect x="9" y="12" width="17" height="3" rx="1.5" fill="#D9D9D9" />
+                                </svg>
+                            </button>
+                            <div className="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700" id="language-dropdown-menu">
+                                <ul className="py-2 font-medium" role="none">
+                                    <li>
+                                        <Link href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">
+                                            <div className="inline-flex items-center gap-3">
+                                                <svg className="w-5 h-5 text-gray-400 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7.75 4H19M7.75 4a2.25 2.25 0 0 1-4.5 0m4.5 0a2.25 2.25 0 0 0-4.5 0M1 4h2.25m13.5 6H19m-2.25 0a2.25 2.25 0 0 1-4.5 0m4.5 0a2.25 2.25 0 0 0-4.5 0M1 10h11.25m-4.5 6H19M7.75 16a2.25 2.25 0 0 1-4.5 0m4.5 0a2.25 2.25 0 0 0-4.5 0M1 16h2.25"></path>
+                                                </svg>
+                                                Setting
+                                            </div>
+                                        </Link>
+                                    </li>
+                                    <li>
+                                        <a href="/login" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">
+                                            <div className="inline-flex items-center gap-3">
+                                                <svg className="w-5 h-5 text-gray-400 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16">
+                                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h11m0 0-4-4m4 4-4 4m-5 3H3a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h3"></path>
+                                                </svg>
+                                                Log - in
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="/dashboard" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">
+                                            <div className="inline-flex items-center gap-3">
+                                                <svg className="w-5 h-5 text-gray-400 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                                    <path d="M19.728 10.686c-2.38 2.256-6.153 3.381-9.875 3.381-3.722 0-7.4-1.126-9.571-3.371L0 10.437V18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-7.6l-.272.286Z"></path>
+                                                    <path d="m.135 7.847 1.542 1.417c3.6 3.712 12.747 3.7 16.635.01L19.605 7.9A.98.98 0 0 1 20 7.652V6a2 2 0 0 0-2-2h-3V3a3 3 0 0 0-3-3H8a3 3 0 0 0-3 3v1H2a2 2 0 0 0-2 2v1.765c.047.024.092.051.135.082ZM10 10.25a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5ZM7 3a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v1H7V3Z"></path>
+                                                </svg>
+                                                Dashboard
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
 
                 </div>
