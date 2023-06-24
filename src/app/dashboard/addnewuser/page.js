@@ -1,6 +1,6 @@
 'use client'
 import React from 'react'
-import "./style.css"
+import "./styleAddUser.css"
 import * as Yup from 'yup';
 import { useRouter } from "next/navigation";
 import { ErrorMessage, Field, Form, Formik } from 'formik';
@@ -43,7 +43,7 @@ export default function AddNewUser() {
                             <div className='flex gap-20 justify-end items-center'>
                                 <div className='uploadImage w-1/5 relative hover:cursor-pointer'>
                                     <img src={'https://media.istockphoto.com/id/1327592506/vector/default-avatar-photo-placeholder-icon-grey-profile-picture-business-man.jpg?s=612x612&w=0&k=20&c=BpR0FVaEa5F24GIw7K8nMWiiGmbb8qmhfkpXcp1dhQg='} className='w-full rounded-full' />
-                                    <div className='uploadButton hidden absolute z-20 top-[7rem] left-[5rem]'>
+                                    <div className='uploadButton hidden absolute z-20 top-[50%] left-[50%] transform translate-x-[-50%] translate-y-[-50%]'>
                                         <label for="inputFile" className='text-white bg-none rounded-lg ring-2 ring-white dark:ring-white p-3 cursor-pointer'>
                                             upload
                                             <input type='file' id='inputFile' className='hidden' />

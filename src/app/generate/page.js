@@ -1,18 +1,18 @@
 "use client";
 import { useState } from "react";
-import "../style/style.css";
+import "./style/style.css";
 import placeholder from '../images/placeholder-profile-sq.jpg';
 import Image from "next/image";
-import SocialLink from "../components/socialLink";
-import Information from "../components/information";
-import Languages from "../components/languages";
-import Skills from "../components/skills";
-import Experience from "../components/experience";
-import Reference from "../components/Reference";
-import Education from "../components/education";
-import Custom from "../components/Custom";
+import SocialLink from "./components/socialLink";
+import Information from "./components/information";
+import Languages from "./components/languages";
+import Skills from "./components/skills";
+import Experience from "./components/experience";
+import Reference from "./components/Reference";
+import Education from "./components/education";
+import Custom from "./components/Custom";
 
-const Generate = () => {
+const Page = () => {
   return (
     <div>
       <div className=" h-40 bg-blue-800 py-32">
@@ -51,4 +51,4 @@ const Generate = () => {
   );
 };
 
-export default Generate;
+export default Page;

@@ -1,3 +1,3 @@
 export const HeaderTitle {
-    fontFamily: "",
+    fontFamily: "inter",
 }

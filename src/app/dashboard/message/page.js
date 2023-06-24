@@ -17,7 +17,6 @@ export default function Message() {
       .then((response) => response.json()).then((response => getmessage(response)));
   }, [])
 
-
   return (
     <section>
       <p className='text-2xl font-semibold'>Message receiver</p>

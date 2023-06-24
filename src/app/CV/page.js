@@ -4,21 +4,11 @@ import './style/CV.css'
 import Image from 'next/image'
 import seangleng from '../images/seangleng-profile.jpg'
 
-export default function Home() {
+export default function CVTemplate() {
     return (
-        <section >
-            <div className='Save'>
-                <button id="dropdownTopButton" data-dropdown-toggle="dropdownTop" data-dropdown-placement="top" class="mr-3 mb-3 md:mb-0 text-white   focus:outline-none  font-medium  text-sm px-4 py-2.5 text-center inline-flex items-center  " type="button"><i class="fa-sharp fa-solid fa-circle-up fa-beat"></i> <svg class="w-4 h-4 ml-2" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z" clip-rule="evenodd"></path></svg></button>
-                <div id="dropdownTop" class="z-10 hidden px-5 w-40 dark:bg-gray-700">
-                    <ul class="py-2 text-sm text-gray-700 " aria-labelledby="dropdownTopButton">
-                        <li>
-                            <a href="#" class="block px-4"><i class="fa-solid fa-floppy-disk"></i></a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <main className="flex min-h-screen flex-col items-center justify-between p-24">
-                <div className='cv w-full min-h-96 bg-white grid grid-rows-1 grid-flow-col gap-4'>
+        <section>
+            <div className="flex flex-col items-center justify-between">
+                <div className='cv w-full min-h-96 bg-white flex flex-row gap-4'>
                     <div className='col left_cv '>
                         <div className='portimg  '>
                             <Image className='shadow-lg' src={seangleng} />
@@ -123,7 +113,7 @@ export default function Home() {
                     </div>
                 </div>
 
-            </main>
+            </div>
         </section>
 
     )

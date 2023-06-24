@@ -68,18 +68,15 @@ const Page = () => {
     phonenumber: Yup.string().required("Required"),
     skills: Yup.string().required("Required"),
   });
-
-
-  const [showButton, setShowButton] = useState(false);
+  
   return (
     <div className="bg-white ">
       <div className=" h-40 w-full bg-blue-800 py-32">
 
         <div className="h-56 w-56 rounded-full lg:ml-[48rem]">
 
-          <Image src={placeholder} className="bg-cover rounded-full profileuser " alt="image" onMouseEnter={() => setShowButton(true)}
-            onMouseLeave={() => setShowButton(false)} />
-          {showButton && <button className="h-auto bt-upload bg-slate-200 rounded-md p-5">Upload</button>}
+          <Image src={placeholder} className="bg-cover rounded-full profileuser " alt="image" />
+
         </div>
       </div>
       <Formik
@@ -102,12 +99,12 @@ const Page = () => {
                 type="text"
                 id="personalinformation"
                 name="personalinformation"
-                className="w-full border border-gray-400 p-5 rounded-lg h-14"
+                className="w-full border border-gray-400 p-5 rounded-lg "
                 placeholder=" Personal Information"
               ></Field>
               <ErrorMessage
                 name="personalinformation"
-                className="text-red-500 text-xs italic"
+                className="error text-xs italic"
               ></ErrorMessage>
             </div>
             <div className="grid grid-cols-3 gap-4">
@@ -123,7 +120,7 @@ const Page = () => {
                   id="firstName"
                   name="firstName"
                   placeholder="Your first name"
-                  className="w-full border border-gray-400 p-5 rounded-lg h-14"
+                  className="w-full border border-gray-400 p-5 rounded-lg "
                 />
               </div>
               <div className="mt-10">
@@ -138,11 +135,11 @@ const Page = () => {
                   id="lastName"
                   name="lastName"
                   placeholder="Your last name"
-                  className="w-full border border-gray-400 p-5 rounded-lg h-14"
+                  className="w-full border border-gray-400 p-5 rounded-lg "
                 />
                 <ErrorMessage
                   name="lastName"
-                  className="text-red-500 text-xs italic"
+                  className="error text-xs italic"
                 />
               </div>
 
@@ -159,7 +156,7 @@ const Page = () => {
                   as="select"
                   id="gender"
                   name="gender"
-                  className="w-full border border-gray-400 p-5 rounded-lg h-14"
+                  className="w-full border border-gray-400 p-5 rounded-lg "
                 >
                   <option value="">Select Gender</option>
                   <option value="male">Male</option>
@@ -177,7 +174,7 @@ const Page = () => {
                 </div>
                 <ErrorMessage
                   name="gender"
-                  className="text-red-500 text-xs italic"
+                  className="error text-xs italic"
                 />
               </div>
             </div>
@@ -195,11 +192,11 @@ const Page = () => {
                   id="generation"
                   name="generation"
                   placeholder="Your Generation"
-                  className="w-full border border-gray-400 p-5 rounded-lg h-14"
+                  className="w-full border border-gray-400 p-5 rounded-lg "
                 />
                 <ErrorMessage
                   name="generation"
-                  className="text-red-500 text-xs italic"
+                  className="error text-xs italic"
                 />
               </div>
               <div className="mt-10">
@@ -213,11 +210,11 @@ const Page = () => {
                   type="date"
                   id="dateofbirth"
                   name="dateofbirth"
-                  className="w-full border border-gray-400 p-5 rounded-lg h-14"
+                  className="w-full border border-gray-400 p-5 rounded-lg "
                 />
                 <ErrorMessage
                   name="dateofbirth"
-                  className="text-red-500 text-xs italic"
+                  className="error text-xs italic"
                 />
               </div>
               <div className="mt-10">
@@ -232,11 +229,11 @@ const Page = () => {
                   id="nationality"
                   name="nationality"
                   placeholder="Your Nationality"
-                  className="w-full border border-gray-400 p-5 rounded-lg h-14"
+                  className="w-full border border-gray-400 p-5 rounded-lg "
                 />
                 <ErrorMessage
                   name="nationality"
-                  className="text-red-500 text-xs italic"
+                  className="error text-xs italic"
                 />
               </div>
             </div>
@@ -252,12 +249,12 @@ const Page = () => {
                 type="text"
                 id="placeofbirth"
                 name="placeofbirth"
-                className="w-full border border-gray-400 p-5 rounded-lg h-14"
+                className="w-full border border-gray-400 p-5 rounded-lg "
                 placeholder="Your hometown "
               />
               <ErrorMessage
                 name="placeofbirth"
-                className="text-red-500 text-xs italic"
+                className="error text-xs italic"
               />
             </div>
 
@@ -272,12 +269,12 @@ const Page = () => {
                 type="text"
                 id="address"
                 name="address"
-                className="w-full border border-gray-400 p-5 rounded-lg h-14"
+                className="w-full border border-gray-400 p-5 rounded-lg "
                 placeholder="Your Address"
               />
               <ErrorMessage
                 name="address"
-                className="text-red-500 text-xs italic"
+                className="error text-xs italic"
               />
             </div>
 
@@ -292,12 +289,12 @@ const Page = () => {
                 type="email"
                 id="email"
                 name="email"
-                className="w-full border border-gray-400 p-5 rounded-lg h-14"
+                className="w-full border border-gray-400 p-5 rounded-lg "
                 placeholder="Your Email"
               />
               <ErrorMessage
                 name="email"
-                className="text-red-500 text-xs italic"
+                className="error text-xs italic"
               />
             </div>
             <div className="mt-10">
@@ -311,26 +308,26 @@ const Page = () => {
                 type="tel"
                 id="phonenumber"
                 name="phonenumber"
-                className="w-full border border-gray-400 p-5 rounded-lg h-14"
+                className="w-full border border-gray-400 p-5 rounded-lg "
                 placeholder="Your Phone Number"
               />
               <ErrorMessage
                 name="phonenumber"
-                className="text-red-500 text-xs italic"
+                className="error text-xs italic"
               />
             </div>
-            <div className="max-w-8xl mx-auto mt-5 p-5 bg-white rounded-md shadow-sm">
+            <div className="mt-5 p-5 bg-white rounded-md shadow-md">
               <button
-                className="px-4 py-3 text-sm font-medium flex items-center"
+                className="pl-4 py-3 text-sm font-medium w-full"
                 onClick={() => setOpen(!open)}
               >
                 {open ? (
-                  <div className="flex-wrap flex-row flex">
+                  <div className="flex justify-between items-center">
                     <h1 className="block text-gray-700 font-bold mb-2 text-lg">
                       Relevent Skills
                     </h1>
                     <svg
-                      className="w-9 h-9 lg:ml-[60rem]"
+                      className="w-9 h-9"
 
                       viewBox="0 0 52 52"
                       fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -338,12 +335,12 @@ const Page = () => {
                     </svg>
                   </div>
                 ) : (
-                  <div className="flex flex-wrap">
+                  <div className="flex justify-between items-center">
                     <h1 className="block text-gray-700 font-bold mb-2 text-lg  ">
                       Relevent Skills
                     </h1>
                     <svg
-                      className="w-7 h-7 lg:ml-[60rem]"
+                      className="w-7 h-7"
                       viewBox="0 0 38 36"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg">
@@ -367,18 +364,18 @@ const Page = () => {
                       placeholder="Your Relevnat Skills"
                       id="skills"
                       onChange={(event) => handleFieldChange(index, event)}
-                      className="w-full border border-gray-400 p-3 mt-5 rounded-lg h-14"
+                      className="w-full border border-gray-400 p-3 mt-5 rounded-lg "
                     />
                   ))}
                   <ErrorMessage
                     name="skills"
-                    className="text-red-500 text-xs italic"
+                    className="error text-xs italic"
                   />
-                  <div className="flex justify-between">
+                  <div className="flex justify-between items-center">
                     <button
                       type="button"
                       onClick={handleAddField}
-                      className="dynamic-form__button mt-10 w-auto p-6 py-2 flex  rounded"
+                      className="dynamic-form__button mt-10 w-auto p-6 py-2 flex rounded-lg "
                     >
                       <svg width="24" height="24" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M9.5 0C4.2655 0 0 4.2655 0 9.5C0 14.7345 4.2655 19 9.5 19C14.7345 19 19 14.7345 19 9.5C19 4.2655 14.7345 0 9.5 0ZM13.3 10.2125H10.2125V13.3C10.2125 13.6895 9.8895 14.0125 9.5 14.0125C9.1105 14.0125 8.7875 13.6895 8.7875 13.3V10.2125H5.7C5.3105 10.2125 4.9875 9.8895 4.9875 9.5C4.9875 9.1105 5.3105 8.7875 5.7 8.7875H8.7875V5.7C8.7875 5.3105 9.1105 4.9875 9.5 4.9875C9.8895 4.9875 10.2125 5.3105 10.2125 5.7V8.7875H13.3C13.6895 8.7875 14.0125 9.1105 14.0125 9.5C14.0125 9.8895 13.6895 10.2125 13.3 10.2125Z" fill="#30419D" />
@@ -409,17 +406,17 @@ const Page = () => {
               )}
             </div>
 
-            <button
-              type="submit"
-              onClick={() => {
-                window.location.pathname = "/profile/${id}";
-              }}
-              className="mt-10 w-full bg-blue-600 text-white py-2 px-4 rounded"
-            >
-              Update your profile
-            </button>
-
-
+            <div className="flex justify-center items-center">
+              <button
+                type="submit"
+                onClick={() => {
+                  window.location.pathname = "/profile/${id}";
+                }}
+                className="mt-10 bg-blue-600 text-white py-5 px-5 rounded-xl"
+              >
+                Update your profile
+              </button>
+            </div>
           </Form>
         )}
       </Formik>
