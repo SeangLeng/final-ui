@@ -12,7 +12,7 @@ import istadlogo from '@/app/images/logo-project.jpg'
 
 const inter = Inter({ subsets: ['latin'] })
 
-export const metadata = {
+const metadata = {
   title: 'PortISTAD',
   description: 'PortISTAD online generate CVs and portfolios following your information',
   openGraph: {
