@@ -1,34 +1,43 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<!-- ABOUT THE PROJECT -->
 
+## About The Project
+
+### Built With
+[Next.js](https://nextjs.org/)
+
+<!-- GETTING STARTED -->
 ## Getting Started
 
-First, run the development server:
+### Installation
+### NOTE: Visual Studio Code required for all installation methods
+## Steps to test UI
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+### [Base_URL](https://final-ui-portistad.vercel.app/)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### [Page URL](https://final-ui-portistad.vercel.app/)
+- Step 01 -> [Home](https://final-ui-portistad.vercel.app)
+- Step 02 -> [Login](https://final-ui-portistad.vercel.app/login)
+- Step 03 -> [Login-student ISTAD](https://final-ui-portistad.vercel.app/login/istadLogin)
+- Step 04 -> [Singin](https://final-ui-portistad.vercel.app/login/signIn)
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+### [Template](https://final-ui-portistad.vercel.app/listProducts)
+- Step 05 -> [CV Template](https://final-ui-portistad.vercel.app/listProducts)
+- Step 06 -> [Portfolio Template](https://final-ui-portistad.vercel.app/listProducts/portfoio)
+- Step 07 -> [Information](https://final-ui-portistad.vercel.app/generate)
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- Step 08 -> [Search](https://final-ui-portistad.vercel.app/homepage/search)
+- Step 09 -> [User Profile](https://final-ui-portistad.vercel.app/profile/undefined)
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+### [AboutUs](https://final-ui-portistad.vercel.app/#aboutUs)
+- Step 10 -> [AboutUs](https://final-ui-portistad.vercel.app/#aboutUs)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### [Dashboard](https://final-ui-portistad.vercel.app/dashboard)
+- Step 11 -> [Alumin Management](https://final-ui-portistad.vercel.app/dashboard/management)
+- Step 12 -> [Add User](https://final-ui-portistad.vercel.app/dashboard/addnewuser)
+- Step 13 -> [Generate](https://final-ui-portistad.vercel.app/dashboard/generate)
+- Step 14 -> [Message](https://final-ui-portistad.vercel.app/dashboard/message)
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.

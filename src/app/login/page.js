@@ -64,8 +64,8 @@ export default function LogInPage() {
                     isSubmitting
                 }) => (
                     <div className='logIn p-20'>
-                        <Form>
-                            <Image src={logoProject} alt="logo-image" />
+                        <Form className='w-2/6'>
+                            <Image src={logoProject} alt="logo-image" className='w-1/3' />
                             <p className='capitalize text-4xl font-semibold text-center mt-20'>log me in</p>
                             <div className='input mt-10'>
                                 <div className="mb-6">

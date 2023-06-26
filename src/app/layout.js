@@ -8,9 +8,18 @@ import Footer from '@/components/footer'
 import { Suspense } from 'react'
 import Loading from './loading'
 import Providers from '@/store/Providers'
-
+import istadlogo from '@/app/images/logo-project.jpg'
 
 const inter = Inter({ subsets: ['latin'] })
+
+export const metadata = {
+  title: 'PortISTAD',
+  description: 'PortISTAD online generate CVs and portfolios following your information',
+  openGraph: {
+    images: { istadlogo },
+  },
+}
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en">

@@ -65,7 +65,7 @@ export default function Navbar() {
             </div>
         )
     }
-    
+
     return (
         <nav className="bg-white dark:bg-gray-900 px-5 fixed w-full z-30 top-0 left-0 border-b border-gray-200 dark:border-gray-600">
             <div className=" flex flex-wrap items-center justify-between pr-4">
@@ -96,7 +96,7 @@ export default function Navbar() {
                         </li>
                     </ul>
                     <div className=" flex items-center md:order-2">
-                        <button type="button" data-dropdown-toggle="language-dropdown-menu" className="inline-flex items-center font-medium justify-center px-4 py-2 text-sm text-gray-900 dark:text-white rounded-lg cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white">
+                        <button type="  " data-dropdown-toggle="language-dropdown-menu" className="inline-flex items-center font-medium justify-center px-4 py-2 text-sm text-gray-900 dark:text-white rounded-lg cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white">
                             <svg width="26" height="15" viewBox="0 0 26 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <rect width="26" height="3" rx="1.5" fill="#D9D9D9" />
                                 <rect x="4" y="6" width="22" height="3" rx="1.5" fill="#D9D9D9" />

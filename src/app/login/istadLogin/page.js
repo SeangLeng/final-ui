@@ -44,7 +44,7 @@ export default function LogInPage() {
                     <div className='logIn p-20'>
                         <form noValidate onSubmit={handleSubmit} className='flex flex-col justify-between items-center h-[60vh]'>
                             <div className='flex flex-col justify-center items-center'>
-                                <Image src={logoProject} alt="logo-image" />
+                                <Image src={logoProject} alt="logo-image" className='w-1/3'/>
                                 <p className='capitalize text-2xl font-semibold text-center mt-20'>Log me In</p>
                             </div>
                             <div className='input mt-10'>
