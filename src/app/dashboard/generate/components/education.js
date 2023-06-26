@@ -30,9 +30,22 @@ const Education = () => {
     console.log(fields);
   };
 
-  const initialValues = { sociallink: "" };
+  const initialValues = { 
+    schoolname: "" ,
+    degree:"",
+    startdate:"",
+    enddate:"",
+    address:"",
+    descritption:"",
+
+  };
   const validationSchema = Yup.object({
-    sociallink: Yup.string(),
+    schoolname: Yup.string(),
+    degree:Yup.string(),
+    startdate:Yup.string(),
+    enddate:Yup.string(),
+    address:Yup.string(),
+    descritption:Yup.string()
   });
   return (
     <Formik
@@ -80,96 +93,114 @@ const Education = () => {
               <div className="grid grid-cols-4 gap-4">
                 <div className="mt-10">
                   <label
-                    htmlFor="firstName"
+                    htmlFor="schoolname"
                     className="block text-gray-700 font-bold mb-2"
                   ></label>
                   <Field
                     type="text"
-                    id="firstName"
-                    name="firstName"
+                    id="schoolname"
+                    name="schoolname"
                     placeholder="School Name"
                     className="w-full border border-gray-400 p-2 rounded-lg h-14"
                   />
                 </div>
                 <div className="mt-10">
                   <label
-                    htmlFor="lastName"
+                    htmlFor="degree"
                     className="block text-gray-700 font-bold mb-2 "
                   ></label>
                   <Field
                     type="text"
-                    id="lastName"
-                    name="lastName"
+                    id="degree"
+                    name="degree"
                     placeholder="Degree"
                     className="w-full border border-gray-400 p-2 rounded-lg h-14"
                   />
                   <ErrorMessage
-                    name="lastName"
+                    name="degree"
                     className="text-red-500 text-xs italic"
                   />
                 </div>
                 <div className="mt-10">
                   <label
-                    htmlFor="firstName"
+                    htmlFor="startdate"
                     className="block text-gray-700 font-bold mb-2"
                   ></label>
                   <Field
                     type="text"
-                    id="firstName"
-                    name="firstName"
-                    placeholder="Start Date"
+                    id="startdate"
+                    name="startdate"
+                    placeholder="startdate"
                     className="w-full border border-gray-400 p-2 rounded-lg h-14"
+                  />
+                  <ErrorMessage
+                    name="degree"
+                    className="text-red-500 text-xs italic"
                   />
                 </div>
                 <div className="mt-10">
                   <label
-                    htmlFor="firstName"
+                    htmlFor="enddate"
                     className="block text-gray-700 font-bold mb-2"
                   ></label>
                   <Field
                     type="text"
-                    id="firstName"
-                    name="firstName"
+                    id="enddate"
+                    name="enddate"
                     placeholder="End Date"
                     className="w-full border border-gray-400 p-2 rounded-lg h-14"
                   />
+                  <ErrorMessage
+                    name="degree"
+                    className="text-red-500 text-xs italic"
+                  />
                 </div>
-              </div>
-              <div className="mt-10">
-                <label
-                  htmlFor="firstName"
-                  className="block text-gray-700 font-bold mb-2"
-                ></label>
-                <Field
-                  type="text"
-                  id="firstName"
-                  name="firstName"
-                  placeholder="Address"
-                  className="w-full border border-gray-400 p-2 rounded-lg h-14"
-                />
               </div>
               <div className="">
                 <label
-                  htmlFor="skills"
+                  htmlFor="address"
                   className="block text-gray-700 font-bold mb-2"
                 ></label>
                 {fields.map((field, index) => (
                   <Field
                     value={field.value}
                     key={index}
-                    name="skills"
+                    name="address"
                     type="text"
-                    placeholder="Your Relevnat Skills"
-                    id="skills"
+                    placeholder="Address"
+                    id="address"
                     onChange={(event) => handleFieldChange(index, event)}
                     className="w-full border border-gray-400 p-3 mt-5 rounded-lg h-14"
                   />
                 ))}
 
                 <ErrorMessage
-                  name="skills"
+                  name="address"
                   className="text-red-500 text-xs italic"
                 />
+                <label
+                  htmlFor="description"
+                  className="block text-gray-700 font-bold mb-2"
+                ></label>
+                {fields.map((field, index) => (
+                  <Field
+                    value={field.value}
+                    key={index}
+                    name="description"
+                    type="text"
+                    placeholder="Description"
+                    id="description"
+                    onChange={(event) => handleFieldChange(index, event)}
+                    className="w-full border border-gray-400 p-3 mt-5 rounded-lg h-14"
+                  />
+                  
+                ))}
+                
+                <ErrorMessage
+                  name="description"
+                  className="text-red-500 text-xs italic"
+                />
+                
                 <div className="flex justify-between">
                   <button
                     type="button"

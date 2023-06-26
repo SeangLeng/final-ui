@@ -95,7 +95,7 @@ export default function Navbar() {
                                 Us</a>
                         </li>
                     </ul>
-                    <div className="flex items-center md:order-2">
+                    <div className=" flex items-center md:order-2">
                         <button type="button" data-dropdown-toggle="language-dropdown-menu" className="inline-flex items-center font-medium justify-center px-4 py-2 text-sm text-gray-900 dark:text-white rounded-lg cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white">
                             <svg width="26" height="15" viewBox="0 0 26 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <rect width="26" height="3" rx="1.5" fill="#D9D9D9" />
@@ -103,7 +103,7 @@ export default function Navbar() {
                                 <rect x="9" y="12" width="17" height="3" rx="1.5" fill="#D9D9D9" />
                             </svg>
                         </button>
-                        <div className="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700" id="language-dropdown-menu">
+                        <div className="z-50 absolute hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700" id="language-dropdown-menu">
                             <ul className="py-2 font-medium" role="none">
                                 <li>
                                     <Link href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">

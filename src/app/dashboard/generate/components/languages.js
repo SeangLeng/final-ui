@@ -23,17 +23,17 @@ const Languages = () => {
     newFields[index].value = event.target.value;
     setFields(newFields);
   };
+  
   const initialValues = {
     languagestitle:"",
-    startdate:"",
-    enddate:"",
+    description:"",
+
 
 };
 
   const validationSchema = Yup.object({
     languagestitle: Yup.string(),
-    startdate: Yup.string(),
-    enddate: Yup.string(),
+    description: Yup.string(),
   });
 
   return (
@@ -82,13 +82,13 @@ const Languages = () => {
             <div>
               <div className="mt-10">
                 <label
-                  htmlFor="firstName"
+                  htmlFor="languagestitle"
                   className="block text-gray-700 font-bold mb-2"
                 ></label>
                 <Field
                   type="text"
-                  id="firstName"
-                  name="firstName"
+                  id="languagestitle"
+                  name="languagestitle"
                   placeholder="Languages title"
                   className="w-full border border-gray-400 p-2 rounded-lg h-14"
                 />
@@ -96,17 +96,17 @@ const Languages = () => {
 
               <div className="">
                 <label
-                  htmlFor="skills"
+                  htmlFor="description"
                   className="block text-gray-700 font-bold mb-2"
                 ></label>
                 {fields.map((field, index) => (
                   <Field
                     value={field.value}
                     key={index}
-                    name="skills"
-                    type="text"
+                    name="description"
+                    type="description"
                     placeholder="Description"
-                    id="skills"
+                    id="description"
                     onChange={(event) => handleFieldChange(index, event)}
                     className="w-full border border-gray-400 p-3 mt-5 rounded-lg h-14"
                   />

@@ -30,11 +30,16 @@ const Skills = () => {
   };
 
   const initialValues = {
-    skills: "",
+    skillname: "",
+    level:"",
+    description:"",
+    
   };
 
   const validationSchema = Yup.object({
-    skills: Yup.string(),
+    skillname: Yup.string(),
+    level: Yup.string(),
+    description: Yup.string(),
   });
 
   return (
@@ -85,48 +90,52 @@ const Skills = () => {
               <div className="grid grid-cols-2 gap-4">
                 <div className="mt-10">
                   <label
-                    htmlFor="firstName"
+                    htmlFor="skillname"
                     className="block text-gray-700 font-bold mb-2"
                   ></label>
                   <Field
                     type="text"
-                    id="firstName"
-                    name="firstName"
+                    id="skillname"
+                    name="skillname"
                     placeholder="skill Name"
                     className="w-full border border-gray-400 p-2 rounded-lg h-14"
+                  />
+                   <ErrorMessage
+                    name="level"
+                    className="text-red-500 text-xs italic"
                   />
                 </div>
                 <div className="mt-10">
                   <label
-                    htmlFor="lastName"
+                    htmlFor="level"
                     className="block text-gray-700 font-bold mb-2 "
                   ></label>
                   <Field
                     type="text"
-                    id="lastName"
-                    name="lastName"
+                    id="level"
+                    name="level"
                     placeholder="level"
                     className="w-full border border-gray-400 p-2 rounded-lg h-14"
                   />
                   <ErrorMessage
-                    name="lastName"
+                    name="level"
                     className="text-red-500 text-xs italic"
                   />
                 </div>
               </div>
               <div className="">
                 <label
-                  htmlFor="skills"
+                  htmlFor="description"
                   className="block text-gray-700 font-bold mb-2"
                 ></label>
                 {fields.map((field, index) => (
                   <Field
                     value={field.value}
                     key={index}
-                    name="skills"
+                    name="description"
                     type="text"
-                    placeholder="Your Relevnat Skills"
-                    id="skills"
+                    placeholder="Description"
+                    id="description"
                     onChange={(event) => handleFieldChange(index, event)}
                     className="w-full border border-gray-400 p-3 mt-5 rounded-lg h-14"
                   />
@@ -161,7 +170,7 @@ const Skills = () => {
                     className="dynamic-form__button w-auto p-6 flex mt-8 rounded"
                   >
                     <svg
-                      width="24"
+                      width ="24"
                       height="24"
                       viewBox="0 0 24 24"
                       fill="none"

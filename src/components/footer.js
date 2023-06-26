@@ -32,10 +32,10 @@ export default function Footer() {
                                     <h2 className="mb-6 text-xl font-semibold uppercase dark:text-white text-white">Service</h2>
                                     <ul className="text-gray-600 dark:text-gray-400 text-xl">
                                         <li className="mb-4">
-                                            <Link href="/listProducts" className="hover:underline text-white">Generate CV</Link>
+                                            <a href="/listProducts" className="hover:underline text-white">Generate CV</a>
                                         </li>
                                         <li>
-                                            <Link href="/listProducts/portfoio" className="hover:underline text-white">Generate Portfoio</Link>
+                                            <a href="/listProducts/portfoio" className="hover:underline text-white">Generate Portfoio</a>
                                         </li>
                                     </ul>
                                 </div>

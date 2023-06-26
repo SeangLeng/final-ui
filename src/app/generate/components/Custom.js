@@ -29,9 +29,13 @@ const Custom = () => {
       console.log(fields);
     };
 
-    const initialValues = { sociallink: "" };
+    const initialValues = { 
+      title: "",
+      Section: " ",
+    };
     const validationSchema = Yup.object({
-      sociallink: Yup.string(),
+      title: Yup.string(),
+      Section : Yup.string(),
     });
     return (
     <Formik
@@ -77,97 +81,45 @@ const Custom = () => {
               </button>
           {open && (
             <div>
-              <div className="grid grid-cols-4 gap-4">
+              
                 <div className="mt-10">
                   <label
-                    htmlFor="firstName"
+                    htmlFor="title"
                     className="block text-gray-700 font-bold mb-2"
                   ></label>
                   <Field
                     type="text"
-                    id="firstName"
-                    name="firstName"
-                    placeholder="School Name"
-                    className="w-full border border-gray-400 p-2 rounded-lg h-14"
-                  />
-                </div>
-                <div className="mt-10">
-                  <label
-                    htmlFor="lastName"
-                    className="block text-gray-700 font-bold mb-2 "
-                  ></label>
-                  <Field
-                    type="text"
-                    id="lastName"
-                    name="lastName"
-                    placeholder="Degree"
+                    id="title"
+                    name="title"
+                    placeholder="Title"
                     className="w-full border border-gray-400 p-2 rounded-lg h-14"
                   />
                   <ErrorMessage
-                    name="lastName"
+                    name="title"
                     className="text-red-500 text-xs italic"
                   />
                 </div>
-                <div className="mt-10">
-                  <label
-                    htmlFor="firstName"
-                    className="block text-gray-700 font-bold mb-2"
-                  ></label>
-                  <Field
-                    type="text"
-                    id="firstName"
-                    name="firstName"
-                    placeholder="Start Date"
-                    className="w-full border border-gray-400 p-2 rounded-lg h-14"
-                  />
-                </div>
-                <div className="mt-10">
-                  <label
-                    htmlFor="firstName"
-                    className="block text-gray-700 font-bold mb-2"
-                  ></label>
-                  <Field
-                    type="text"
-                    id="firstName"
-                    name="firstName"
-                    placeholder="End Date"
-                    className="w-full border border-gray-400 p-2 rounded-lg h-14"
-                  />
-                </div>
-              </div>
-              <div className="mt-10">
-                <label
-                  htmlFor="firstName"
-                  className="block text-gray-700 font-bold mb-2"
-                ></label>
-                <Field
-                  type="text"
-                  id="firstName"
-                  name="firstName"
-                  placeholder="Address"
-                  className="w-full border border-gray-400 p-2 rounded-lg h-14"
-                />
-              </div>
+           
               <div className="">
                 <label
-                  htmlFor="skills"
+                  htmlFor="Section"
                   className="block text-gray-700 font-bold mb-2"
                 ></label>
                 {fields.map((field, index) => (
                   <Field
                     value={field.value}
                     key={index}
-                    name="skills"
+                    name="Section"
                     type="text"
-                    placeholder="Your Relevnat Skills"
-                    id="skills"
+                    placeholder="Section"
+                    id="Section"
                     onChange={(event) => handleFieldChange(index, event)}
                     className="w-full border border-gray-400 p-3 mt-5 rounded-lg h-14"
                   />
                 ))}
 
                 <ErrorMessage
-                  name="skills"
+                  name="Section"
                   className="text-red-500 text-xs italic"
                 />
                 <div className="flex justify-between">

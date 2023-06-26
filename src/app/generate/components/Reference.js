@@ -100,7 +100,6 @@ const Reference = () => {
               className="w-full border border-gray-400 p-2 rounded-lg h-14"
             />
           </div>
-
           <div className="mt-10">
             <label
               htmlFor="position"

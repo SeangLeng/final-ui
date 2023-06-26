@@ -7,9 +7,22 @@ import { ErrorMessage, Field, Formik, Form } from "formik";
 const SocialLink = () => {
   const [open, setOpen] = useState(false);
 
-  const initialValues = { sociallink: "" };
+  const initialValues = { 
+    sociallink: "" ,
+    sociallink1: "" ,
+    sociallink2: "" ,
+    sociallink3: "" ,
+    sociallink4: "" ,
+    sociallink5: "" ,
+   
+  };
   const validationSchema = Yup.object({
     sociallink: Yup.string(),
+    sociallink1: Yup.string(),
+    sociallink2: Yup.string(),
+    sociallink3: Yup.string(),
+    sociallink4: Yup.string(),
+    sociallink5: Yup.string(),
   });
 
   return (
@@ -72,7 +85,7 @@ const SocialLink = () => {
 
               <div className="mt-10">
                 <label
-                  htmlFor="firstName"
+                  htmlFor="sociallink"
                   className="block text-gray-700 font-bold mb-2"
                 ></label>
                 <Field
@@ -86,52 +99,52 @@ const SocialLink = () => {
               
               <div className="mt-10">
                 <label
-                  htmlFor="firstName"
+                  htmlFor="sociallink1"
                   className="block text-gray-700 font-bold mb-2"
                 ></label>
                 <Field
                   type="text"
-                  id="sociallink"
-                  name="sociallink"
+                  id="sociallink1"
+                  name="sociallink1"
                   placeholder="Link"
                   className="w-full border border-gray-400 p-2 rounded-lg h-14"
                 />
               </div>
               <div className="mt-10">
                 <label
-                  htmlFor="firstName"
+                  htmlFor="sociallink2"
                   className="block text-gray-700 font-bold mb-2"
                 ></label>
                 <Field
                   type="text"
-                  id="sociallink"
-                  name="sociallink"
+                  id="sociallink2"
+                  name="sociallink2"
                   placeholder="Link"
                   className="w-full border border-gray-400 p-2 rounded-lg h-14"
                 />
               </div>
               <div className="mt-10">
                 <label
-                  htmlFor="sociallink"
+                  htmlFor="sociallink3"
                   className="block text-gray-700 font-bold mb-2"
                 ></label>
                 <Field
                   type="text"
-                  id="sociallink"
-                  name="sociallink"
+                  id="sociallink3"
+                  name="sociallink3"
                   placeholder="Link"
                   className="w-full border border-gray-400 p-2 rounded-lg h-14"
                 />
               </div>
               <div className="mt-10">
                 <label
-                  htmlFor="firstName"
+                  htmlFor="sociallink4"
                   className="block text-gray-700 font-bold mb-2"
                 ></label>
                 <Field
                   type="text"
-                  id="sociallink"
-                  name="sociallink"
+                  id="sociallink4"
+                  name="sociallink4"
                   placeholder="Link"
                   className="w-full border border-gray-400 p-2 rounded-lg h-14"
                 />
