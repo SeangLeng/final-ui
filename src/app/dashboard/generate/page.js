@@ -12,17 +12,20 @@ import Reference from "./components/Reference";
 import Education from "./components/education";
 import Custom from "./components/Custom";
 
-
 export default function Generate() {
   return (
     <div>
       <div className="h-40 bg-blue-800 py-32">
-        <div className="h-56 w-56 lg:absolute lg:ml-10 md:block md:m-auto sm:block rounded-full m-auto">
-          <Image
-            src={placeholder}
-            className="bg-cover rounded-full"
-            alt="image"
-          />
+        <div className='flex absolute w-1/6 gap-20 justify-start items-center'>
+          <div className='uploadImage w-full ml-10 relative hover:cursor-pointer'>
+            <img src={'https://media.istockphoto.com/id/1327592506/vector/default-avatar-photo-placeholder-icon-grey-profile-picture-business-man.jpg?s=612x612&w=0&k=20&c=BpR0FVaEa5F24GIw7K8nMWiiGmbb8qmhfkpXcp1dhQg='} className='w-full rounded-full' />
+            <div className='uploadButton hidden absolute z-20 top-[50%] left-[50%] transform translate-x-[-50%] translate-y-[-50%]'>
+              <label for="inputFile" className='text-white bg-none rounded-lg ring-2 ring-white dark:ring-white p-3 cursor-pointer'>
+                upload
+                <input type='file' id='inputFile' className='hidden' />
+              </label>
+            </div>
+          </div>
         </div>
         <div className="w-full flex justify-end items-center">
           <div className="lg:w-4/5 md:w-full w-full p-8 lg:mt-20 md:mt-0 sm:mt-0">

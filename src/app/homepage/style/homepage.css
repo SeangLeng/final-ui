@@ -93,6 +93,7 @@ button {
 .searchResult ul li:hover {
     background-color: #e9f3ff;
 }
+
 @keyframes downTop {
     0% {
         transform: translateY(0%);

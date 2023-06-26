@@ -1,0 +1,25 @@
+.uploadImage img {
+    filter: brightness(85%);
+    transition: .4s;
+}
+
+.uploadImage::before {
+    content: '';
+    background-color: rgba(0, 0, 0, 0.502);
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: none;
+    border-radius: 50%;
+}
+
+.uploadImage:hover .uploadButton {
+    display: block;
+}
+
+.uploadImage:hover .uploadImage::before {
+    display: block;
+}

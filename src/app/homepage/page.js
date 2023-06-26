@@ -119,7 +119,7 @@ export default function Homepage() {
             <div className='flex-col justify-between'>
               <p className='text-2xl'>View ISTAD student</p>
               <p className='mt-5'>You all can find the ISTAD student account with their public account. </p>
-              <a href='#'>
+              <a href='/homepage/search'>
                 <svg className='mt-10' width="47" height="24" viewBox="0 0 47 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M45.5635 13.0607C46.1493 12.4749 46.1493 11.5251 45.5635 10.9393L36.0175 1.3934C35.4317 0.807611 34.482 0.807611 33.8962 1.3934C33.3104 1.97919 33.3104 2.92893 33.8962 3.51472L42.3815 12L33.8962 20.4853C33.3104 21.0711 33.3104 22.0208 33.8962 22.6066C34.482 23.1924 35.4317 23.1924 36.0175 22.6066L45.5635 13.0607ZM0 13.5H14.6224V10.5H0V13.5ZM14.6224 13.5H44.5028V10.5H14.6224V13.5Z" fill="#452DD7" />
                 </svg>
