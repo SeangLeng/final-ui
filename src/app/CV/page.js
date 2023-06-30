@@ -34,28 +34,28 @@ export default function CVTemplate() {
                         <p className='texth  mt-4'>IT Instructor – Position or Specialize (optional)</p>
 
                         <li className='ml-5'>
-                            <LInk className='text_li'>Specialize on Blockchain, SQL & Data Modeling, Android, Flutter</a>
+                            <a className='text_li'>Specialize on Blockchain, SQL & Data Modeling, Android, Flutter</a>
                         </li>
                         <li className='ml-5'>
-                            <LInk className='text_li'>Prepare course syllabus and material</a>
+                            <a className='text_li'>Prepare course syllabus and material</a>
                         </li>
                         <li className='ml-5'>
-                            <LInk className='text_li'>Support Training Department</a>
+                            <a className='text_li'>Support Training Department</a>
                         </li>
 
                         <p className='texth  mt-4'>Senior UI/UX Designer </p>
 
                         <li className='ml-5'>
-                            <LInk className='text_li'>Prepare the templates</a>
+                            <a className='text_li'>Prepare the templates</a>
                         </li>
                         <li className='ml-5'>
-                            <LInk className='text_li'>Design website template </a>
+                            <a className='text_li'>Design website template </a>
                         </li>
                         <li className='ml-5'>
-                            <LInk className='text_li'>Design mobile template</a>
+                            <a className='text_li'>Design mobile template</a>
                         </li>
                         <li className='ml-5'>
-                            <LInk className='text_li'>Support team with leader of the UI position</a>
+                            <a className='text_li'>Support team with leader of the UI position</a>
                         </li>
 
                         <h2 className='skill  mt-4 text-black font-semibold'>Education</h2>
@@ -65,29 +65,29 @@ export default function CVTemplate() {
                         <p className='text_li'>2021 - 2024</p>
 
                         <li className='ml-5'>
-                            <LInk className='text_li'>C, C++ , JAVA programming language </a>
+                            <a className='text_li'>C, C++ , JAVA programming language </a>
                         </li>
                         <li className='ml-5'>
-                            <LInk className='text_li'>Database management system (SQL, MySQL server )</a>
+                            <a className='text_li'>Database management system (SQL, MySQL server )</a>
                         </li>
                         <li className='ml-5'>
-                            <LInk className='text_li'>Web - development</a>
+                            <a className='text_li'>Web - development</a>
                         </li>
                         <li className='ml-5'>
-                            <LInk className='text_li'>Management information system</a>
+                            <a className='text_li'>Management information system</a>
                         </li>
 
                         <p className='texth  mt-4'>Art design - Website design</p>
                         <p className='text_li'>2021</p>
 
                         <li className='ml-5'>
-                            <LInk className='text_li'>Figma - design</a>
+                            <a className='text_li'>Figma - design</a>
                         </li>
                         <li className='ml-5'>
-                            <LInk className='text_li'>Front - end design</a>
+                            <a className='text_li'>Front - end design</a>
                         </li>
                         <li className='ml-5'>
-                            <LInk className='text_li'>Editing photos</a>
+                            <a className='text_li'>Editing photos</a>
                         </li>
                         <h2 className='skill mt-4 text-black font-semibold'>Skills</h2>
                         <p className='bg-black h-1 w-72'></p>
@@ -95,10 +95,10 @@ export default function CVTemplate() {
                         <p className='text-xs mt-4'>Full stack development ( Pro )</p>
 
                         <li className='ml-5'>
-                            <LInk className='text_li'>Front - end</a>
+                            <a className='text_li'>Front - end</a>
                         </li>
                         <li className='ml-5'>
-                            <LInk className='text_li'>Back - end</a>
+                            <a className='text_li'>Back - end</a>
                         </li>
 
                         <h2 className='skill mt-4 text-black font-semibold'>Language</h2>
@@ -107,7 +107,7 @@ export default function CVTemplate() {
                         <p className='text-xs mt-4'>English</p>
 
                         <li className='ml-5'>
-                            <LInk className='text_li'>ACE IELTS teacher trainer</a>
+                            <a className='text_li'>ACE IELTS teacher trainer</a>
                         </li>
 
                     </div>
