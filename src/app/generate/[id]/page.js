@@ -1,5 +1,4 @@
 "use client";
-import { useState } from "react";
 import "../style/style.css";
 import placeholder from '../images/placeholder-profile-sq.jpg';
 import Image from "next/image";

@@ -11,7 +11,7 @@ export default function layout({ children }) {
         <section>
             <Navbar />
             <ProfileAside />
-            <div className="w-full p-10 sm:ml-64 flex flex-wrap mt-24 justify-start gap-5 items-center">
+            <div className="p-10 sm:ml-72 lg:ml-80 md:ml-80 flex flex-wrap mt-24 justify-start gap-5 items-start">
                 <Suspense fallback={<Loading />}>
                     {children}
                 </Suspense>

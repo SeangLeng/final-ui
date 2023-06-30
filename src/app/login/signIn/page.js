@@ -8,31 +8,45 @@ import axios from "axios";
 import { API } from "@/app/api/constant.js"
 import { Formik, Form, Field, ErrorMessage } from "formik"
 import * as Yup from 'yup';
+import { useRouter } from 'next/navigation'
 
-export const getUserToCheck = async () => {
-    const request = await fetch(`${API}/users`)
-    const response = await request.json();
-    return response;
-}
+
 
 export default function SignIn() {
-    useEffect(() => {
-        getUserToCheck().then(data => setUser(data))
-    })
+    const router = useRouter();
     const validateSchema = Yup.object().shape({
         email: Yup.string().required("Email must be blank"),
         username: Yup.string().required("Username must not be blank"),
         password: Yup.string().required("password must not be blank"),
-        confirmPassword: Yup.string().required("You have to confirm your password")
+        confirmedPassword: Yup.string().required("You have to confirm your password")
     })
+
+    const postUsers = (user) => {
+        fetch(`${API}auth/register`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(user)
+        }).then(response => response.json()).then(response => {
+            if (response.status === true) {
+                fetch(`${API}auth/verify?email=${user.email}`, {
+                    method: "POST",
+                }).then(res => res.json()).then(response => console.log("sent ", response));
+                router.push("/login/verify");
+            } else {
+                router.push("/login");
+            };
+        });
+    }
 
     return (
         <Formik
-            initialValues={{ email: "", username: "", password: "", confirmPassword: "" }}
+            initialValues={{ email: "", username: "", password: "", confirmedPassword: "", roleIds: [2] }}
             validationSchema={validateSchema}
             onSubmit={(values) => {
-                // Alert the input values of the form that we filled
-                alert(JSON.stringify(values));
+                postUsers(values);
+                alert(JSON.stringify(values, null, 2));
             }}
         >
             {
@@ -90,19 +104,19 @@ export default function SignIn() {
                                 </div>
                                 <div className="mb-6">
                                     <input
-                                        name="confirmPassword"
+                                        name="confirmedPassword"
                                         onChange={handleChange}
                                         onBlur={handleBlur}
-                                        value={values.confirmPassword}
+                                        value={values.confirmedPassword}
                                         placeholder="Confirm Password"
-                                        id="confirmPassword"
+                                        id="confirmedPassword"
                                         className="p-4 w-full rounded-[20px] bg-gray-50 border border-gray-300 text-gray-900 text-sm focus:ring-0 focus:border-0 block dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-0" />
                                     <p className="error text-red-600">
-                                        {errors.confirmPassword && touched.confirmPassword && errors.confirmPassword}
+                                        {errors.confirmedPassword && touched.confirmedPassword && errors.confirmedPassword}
                                     </p>
                                 </div>
                             </div>
-                            <button type="submit" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg m-auto text-lg w-full sm:w-auto px-14 py-3 mt-10 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Sign me up</button>
+                            <button disabled={handleSubmit} type="submit" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg m-auto text-lg w-full sm:w-auto px-14 py-3 mt-10 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Sign me up</button>
                         </form>
                     </div>
                 )

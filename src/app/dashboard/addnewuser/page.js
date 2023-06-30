@@ -5,6 +5,7 @@ import * as Yup from 'yup';
 import { useRouter } from "next/navigation";
 import { ErrorMessage, Field, Form, Formik } from 'formik';
 import { Router } from 'next/router';
+// import Personality from './components/personality';
 
 export default function AddNewUser() {
     const router = useRouter();
@@ -28,7 +29,7 @@ export default function AddNewUser() {
         <section className='pr-52'>
             <Formik
                 initialValues={{
-                    profileInformation: "", username: "", password: "", phone_number: "", age: "", role: "", address: "", personality: ""
+                    profileInformation: "", username: "", password: "", phone_number: "", age: "", role: "", address: "", 
                 }}
                 validationSchema={validateSchema}
                 onSubmit={(values, { setSubmitting, resetForm }) => {
@@ -114,7 +115,10 @@ export default function AddNewUser() {
                                         className="text-red-500"
                                     />
                                 </div>
+                                {/* <Personality/> */}
+                               
                                 <div className='border grid gap-5 border-gray-400 rounded-xl p-10'>
+                                    
                                     <div className='flex justify-between item-center'>
                                         <p className='font-semibold text-lg'>Personality</p>
                                         <svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">

@@ -18,13 +18,14 @@ const baseQuery = fetchBaseQuery({
 // custom base query with re-authentication when token expires
 const baseQueryWithReAuth = async (args, api, extraOptions) => {
   let result = await baseQuery(args, api, extraOptions);
+  console.log("result: ", result);
   if (result?.error?.status === 401) {
     const refreshToken = await getDecryptedRefreshToken();
     console.log("resfreshToken in apiSlice", refreshToken);
     if (refreshToken) {
       try {
         const response = await fetch(
-          `${process.env.NEXT_PUBLIC_BASE_URL}/auth/refresh`,
+          `${process.env.NEXT_PUBLIC_BASE_URL}auth/refresh`,
           {
             method: "POST",
             headers: { "Content-Type": "application/json" },
@@ -55,7 +56,6 @@ const baseQueryWithReAuth = async (args, api, extraOptions) => {
           result = await baseQuery(args, api, extraOptions);
         } else if (resultResponse.code === 401) {
           api.dispatch(logout());
-          alert("Your session has expired. Please login again.");
         }
       } catch (error) {
         console.error("Failed to refresh access token", error);
@@ -64,7 +64,6 @@ const baseQueryWithReAuth = async (args, api, extraOptions) => {
       }
     } else {
       api.dispatch(logout());
-      alert("Your session has expired. Please login again.");
     }
   }
   return result;

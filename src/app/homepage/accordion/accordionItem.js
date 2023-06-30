@@ -7,7 +7,7 @@ export default function AccordionItem({open, toggle, title, answer}) {
   return (
     <div className='drop-shadow-lg'>
         <div className='rounded-xl bg-white py-[25px] px-[50px] flex justify-between items-center cursor-pointer mt-5' onClick={toggle}>
-            <p className='text-[22px] font-semibold'>{title}</p>
+            <p className='text-lg lg:text-xl md:text-xl font-semibold'>{title}</p>
             <p className='text-[30-px]'>{
                 open ? <AiFillMinusCircle /> : <AiOutlinePlus /> 
             }</p>

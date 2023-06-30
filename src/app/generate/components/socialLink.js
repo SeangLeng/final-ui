@@ -1,6 +1,6 @@
 
 
-import React from "react";
+"use client"
 import { useState } from "react";
 import * as Yup from "yup";
 import { ErrorMessage, Field, Formik, Form } from "formik";
@@ -44,14 +44,18 @@ const SocialLink = () => {
                     <h1 className="block text-gray-700 font-bold mb-2 text-lg">
                       Social Link
                     </h1>
-                  <svg 
-                  className="w-9 h-9"
-                 
-                  viewBox="0 0 52 52" 
-                  fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M13.3153 38.6388C20.42 45.8435 31.9641 46.0396 39.0259 39.0756C46.0878 32.1116 46.0529 20.5659 38.9482 13.3613C31.8435 6.15673 20.2994 5.96062 13.2375 12.9246C6.17566 19.8885 6.21056 31.4342 13.3153 38.6388ZM21.9353 19.822L26.1259 24.0715L30.2913 19.9639C30.8167 19.4457 31.6909 19.4606 32.2196 19.9967C32.7482 20.5328 32.7509 21.4071 32.2254 21.9253L28.06 26.0328L32.2507 30.2824C32.7793 30.8185 32.782 31.6928 32.2565 32.211C31.731 32.7291 30.8568 32.7143 30.3282 32.1782L26.1376 27.9287L21.9722 32.0363C21.4467 32.5544 20.5726 32.5396 20.0439 32.0035C19.5153 31.4674 19.5126 30.5931 20.0381 30.0749L24.2034 25.9673L20.0128 21.7178C19.4842 21.1817 19.4815 20.3074 20.007 19.7892C20.5325 19.271 21.4066 19.2859 21.9353 19.822Z" fill="#FE0000"/>
-                  </svg>
+                      
+                     
+                    <svg 
+               className="w-9 h-9"
+               viewBox="0 0 52 51" 
+               fill="none" 
+               xmlns="http://www.w3.org/2000/svg">
+               <path d="M13.184 38.0932C20.1477 45.1553 31.5771 45.2356 38.6392 38.2719C45.7013 31.3082 45.7816 19.8788 38.8179 12.8167C31.8542 5.75453 20.4248 5.67431 13.3627 12.638C6.30052 19.6017 6.2203 31.0311 13.184 38.0932ZM21.9069 19.3803L26.0143 23.5458L30.1798 19.4384C30.7053 18.9202 31.5708 18.9263 32.089 19.4518C32.6071 19.9773 32.6011 20.8427 32.0756 21.3609L27.9101 25.4683L32.0175 29.6338C32.5357 30.1593 32.5296 31.0248 32.0041 31.543C31.4786 32.0612 30.6131 32.0551 30.095 31.5296L25.9875 27.3641L21.822 31.4715C21.2965 31.9897 20.4311 31.9836 19.9129 31.4581C19.3947 30.9326 19.4008 30.0671 19.9263 29.549L24.0918 25.4415L19.9844 21.276C19.4662 20.7505 19.4723 19.8851 19.9978 19.3669C20.5232 18.8487 21.3887 18.8548 21.9069 19.3803Z" fill="#FE0000" fill-opacity="0.69"/>
+               </svg>
+                  
                   </div>
+
                 ) : (
                   <div className="flex justify-between item-center">
                     <h1 className="block text-gray-700 font-bold mb-2 text-lg  ">
@@ -71,20 +75,6 @@ const SocialLink = () => {
             <div>
               <div className="mt-10">
                 <label
-                  htmlFor="firstName"
-                  className="block text-gray-700 font-bold mb-2"
-                ></label>
-                <Field
-                  type="text"
-                  id="sociallink"
-                  name="sociallink"
-                  placeholder="Link"
-                  className="w-full border border-gray-400 p-2 rounded-lg h-14"
-                />
-              </div>
-
-              <div className="mt-10">
-                <label
                   htmlFor="sociallink"
                   className="block text-gray-700 font-bold mb-2"
                 ></label>
@@ -95,11 +85,12 @@ const SocialLink = () => {
                   placeholder="Link"
                   className="w-full border border-gray-400 p-2 rounded-lg h-14"
                 />
+                <ErrorMessage name="sociallink" className='text-red-500 text-xs italic'/>
               </div>
-              
+
               <div className="mt-10">
                 <label
-                  htmlFor="sociallink1"
+                  htmlFor="sociallink"
                   className="block text-gray-700 font-bold mb-2"
                 ></label>
                 <Field
@@ -109,7 +100,9 @@ const SocialLink = () => {
                   placeholder="Link"
                   className="w-full border border-gray-400 p-2 rounded-lg h-14"
                 />
+                <ErrorMessage name="sociallink1" className='text-red-500 text-xs italic'/>
               </div>
+              
               <div className="mt-10">
                 <label
                   htmlFor="sociallink2"
@@ -122,10 +115,12 @@ const SocialLink = () => {
                   placeholder="Link"
                   className="w-full border border-gray-400 p-2 rounded-lg h-14"
                 />
+                <ErrorMessage name="sociallink2" className='text-red-500 text-xs italic'/>
+                
               </div>
               <div className="mt-10">
                 <label
-                  htmlFor="sociallink3"
+                  htmlFor="sociallink2"
                   className="block text-gray-700 font-bold mb-2"
                 ></label>
                 <Field
@@ -135,6 +130,7 @@ const SocialLink = () => {
                   placeholder="Link"
                   className="w-full border border-gray-400 p-2 rounded-lg h-14"
                 />
+                <ErrorMessage name="sociallink3" className='text-red-500 text-xs italic'/>
               </div>
               <div className="mt-10">
                 <label
@@ -148,6 +144,21 @@ const SocialLink = () => {
                   placeholder="Link"
                   className="w-full border border-gray-400 p-2 rounded-lg h-14"
                 />
+                <ErrorMessage name="sociallink4" className='text-red-500 text-xs italic'/>
+              </div>
+              <div className="mt-10">
+                <label
+                  htmlFor="sociallink5"
+                  className="block text-gray-700 font-bold mb-2"
+                ></label>
+                <Field
+                  type="text"
+                  id="sociallink5"
+                  name="sociallink5"
+                  placeholder="Link"
+                  className="w-full border border-gray-400 p-2 rounded-lg h-14"
+                />
+                <ErrorMessage name="sociallink5" className='text-red-500 text-xs italic'/>
               </div>
             </div>
           )}

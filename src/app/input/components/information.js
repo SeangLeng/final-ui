@@ -1,4 +1,4 @@
-"use client"
+import React from 'react';
 import { ErrorMessage, Field, Formik, Form } from "formik";
 import * as Yup from "yup";
 
@@ -61,7 +61,7 @@ const Information = () => {
               ></Field>
               <ErrorMessage
                 name="personalinformation"
-                className="text-red-500"
+                className="text-red-500 text-xs italic"
               ></ErrorMessage>
             </div>
             <div className="grid grid-cols-3 gap-4">
@@ -79,7 +79,7 @@ const Information = () => {
                   placeholder="Your first name"
                   className="w-full border border-gray-400 p-4 rounded-lg "
                 />
-                <ErrorMessage name="firstName" className='text-red-500 text-xs italic'/>
+                <ErrorMessage name="firstname" className='text-red-500 text-xs italic'/>
               </div>
               <div className="mt-10">
                 <label
@@ -238,51 +238,51 @@ const Information = () => {
 
             <div className="grid grid-cols-2 gap-4">
 
-              <div className="mt-10">
-                <label
-                  htmlFor="email"
-                  className="block text-gray-700 font-bold mb-2"
-                >
-                  Email
-                </label>
-                <Field
-                  type="email"
-                  id="email"
-                  name="email"
-                  className="w-full border border-gray-400 p-4 rounded-lg "
-                  placeholder="Your Email"
-                />
-                <ErrorMessage
-                  name="email"
-                  className="text-red-500 text-xs italic"
-                />
-              </div>
-              <div className="mt-10">
-                <label
-                  htmlFor="phonenumber"
-                  className="block text-gray-700 font-bold mb-2 "
-                >
-                  Phone Number
-                </label>
-                <Field
-                  type="tel"
-                  id="phonenumber"
-                  name="phonenumber"
-                  className="w-full border border-gray-400 p-4 rounded-lg "
-                  placeholder="Your Phone Number"
-                />
-                <ErrorMessage
-                  name="phonenumber"
-                  className="text-red-500 text-xs italic"
-                />
-              </div>
+            <div className="mt-10">
+              <label
+                htmlFor="email"
+                className="block text-gray-700 font-bold mb-2"
+              >
+                Email
+              </label>
+              <Field
+                type="email"
+                id="email"
+                name="email"
+                className="w-full border border-gray-400 p-4 rounded-lg "
+                placeholder="Your Email"
+              />
+              <ErrorMessage
+                name="email"
+                className="text-red-500 text-xs italic"
+              />
             </div>
-
+            <div className="mt-10">
+              <label
+                htmlFor="phonenumber"
+                className="block text-gray-700 font-bold mb-2 "
+              >
+                Phone Number
+              </label>
+              <Field
+                type="tel"
+                id="phonenumber"
+                name="phonenumber"
+                className="w-full border border-gray-400 p-4 rounded-lg "
+                placeholder="Your Phone Number"
+              />
+              <ErrorMessage
+                name="phonenumber"
+                className="text-red-500 text-xs italic"
+              />
+            </div>
+            </div>
+          
           </Form>
         )}
       </Formik>
     </div>
-  );
+    );
 }
 
 export default Information;

@@ -7,7 +7,7 @@ import DashboardFooter from '@/components/dashboardFooter'
 
 export default function RootLayout({ children }) {
     return (
-        <div>
+        <section>
             <NavbarDashboard />
             <SideBar />
             <div className="p-4 sm:ml-64">
@@ -17,6 +17,6 @@ export default function RootLayout({ children }) {
             </div>
             <DashboardFooter />
             <Script src="../node_modules/tw-elements/dist/js/tw-elements.umd.min.js"></Script>
-        </div>
+        </section>
     )
 }

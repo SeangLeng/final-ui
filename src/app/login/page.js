@@ -13,6 +13,7 @@ import { useLoginMutation } from "@/store/features/auth/authApiSlice";
 import { useRouter } from "next/navigation";
 
 export default function LogInPage() {
+
     const passwordRegex = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{6,}$/;
     const validateSchema = Yup.object().shape({
         email: Yup.string().email("Invalid email").required("Required"),
@@ -27,16 +28,14 @@ export default function LogInPage() {
     const dispatch = useDispatch();
     const [login, { isLoading }] = useLoginMutation();
     const router = useRouter();
-    
+
     const handleSubmit = async ({ email, password }) => {
         try {
-            // .unwrap() is a utility function that will return either the fulfilled value or throw the rejected value as an error.
             const { data } = await login({ email, password }).unwrap();
-            console.log("data", data);
             dispatch(
                 setCredentials(data)
             );
-            router.push("/");
+            router.back(); 
         } catch (error) {
             if (!error.response) {
                 alert("No Server Response");
@@ -48,7 +47,7 @@ export default function LogInPage() {
             }
         }
     };
-    
+
     return (
         <Formik
             initialValues={{ email: "", password: "" }}

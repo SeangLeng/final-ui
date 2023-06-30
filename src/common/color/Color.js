@@ -1,4 +1,4 @@
-export const HeaderTitle {
+export const HeaderTitle =  {
+    title: "PortISTAD", 
     fontFamily: "inter",
-    
 }

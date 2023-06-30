@@ -4,17 +4,12 @@ import Image from "next/image"
 import Link from "next/link"
 import ImageBg from '../app/images/background_footer.png'
 import { useEffect, useState } from "react"
+import { Router } from 'next/router';
+import { usePathname, useRouter } from "next/navigation";
 export default function Footer() {
-    const [check, setUrl] = useState([]);
-    useEffect(() => {
-        setUrl(url);
-    })
-    let url;
-    if (typeof window !== "undefined") {
-        url = window.location;
-    }
+    const router = usePathname();
 
-    if (check.pathname === "/") {
+    if (router === "/") {
         return (
             <div className="relative w-full">
                 <Image src={ImageBg} alt="background-image" className="absolute -z-10 bottom-0 right-0 w-full" width={"100%"} height={"100%"} />

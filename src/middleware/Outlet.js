@@ -11,13 +11,13 @@ export default function Outlet({ children }) {
   const token = useSelector(selectCurrentToken);
   const user = useSelector(selectCurrentUser);
   console.log("token", token);
-    console.log("user", user);
+  console.log("user", user);
 
-//   if (pathname === "/welcome" && token) {
-//     return children;
-//   } else if (pathname === "/welcome" && !token) {
-//     alert("Unauthorized");
-//     router.push("/auth/login");
-//   } 
+  //   if (pathname === "/welcome" && token) {
+  //     return children;
+  //   } else if (pathname === "/welcome" && !token) {
+  //     alert("Unauthorized");
+  //     router.push("/auth/login");
+  //   } 
   return children;
 }

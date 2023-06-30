@@ -3,14 +3,12 @@ import { ErrorMessage, Field, Formik, Form } from "formik";
 import * as Yup from "yup";
 import React, { useEffect, useState } from "react";
 
-const Languages = () => {
-  const [displayLanguage, setDisplayLanguage] = useState(false);
-  const [description, setdescription] = useState("");
+const Skill = () => {
+  const [displaySkill, setDisplaySkill] = useState(false);
   const [currentIndex, setcurrentIndex] = useState(0);
-  const [Language, setLanguage] = useState([
+  const [Skill, setSkill] = useState([
     {
-      languagestitle: "",
-      description: "",
+      skill: "",
       isShow: true,
       id: 0,
     },
@@ -23,63 +21,55 @@ const Languages = () => {
   };
 
   const onDropDwon = (id) => {
-    setLanguage(Language.map((x) => (x.id == id ? { ...x, isShow: !x.isShow } : x)));
+    setSkill(Skill.map((x) => (x.id == id ? { ...x, isShow: !x.isShow } : x)));
   };
 
-  const handleLanguageChange = (index, event) => {
+  const handleSkillChange = (index, event) => {
     setcurrentIndex(index);
     console.log(event.target.value);
-    let data = [...Language];
+    let data = [...Skill];
     data[index][event.target.name] = event.target.value;
-    setLanguage(data);
+    setSkill(data);
   };
 
-  useEffect(() => {
-    let data = [...Language];
-    if (description) data[currentIndex].description = description;
-
-    description && setLanguage(data);
-  }, [description]);
-
   const addFieldsSkill = () => {
-    setDisplayLanguage(true);
-    if (!displayLanguage) {
+    setDisplaySkill(true);
+    if (!displaySkill) {
       console.log("Hidden true");
     } else {
       let newData = {
-        languagestitle: "",
-      description: "",
+        skill: "",
         isShow: true,
-        id: Language.length,
+        id: Skill.length,
       };
 
-      const oldData = Language.map((x) => {
+      const oldData = Skill.map((x) => {
         return {
           ...x,
           isShow: false,
         };
       });
-      setLanguage([...oldData, newData]);
+      setSkill([...oldData, newData]);
     }
   };
 
-  const removeFieldsLanguage = (index, e) => {
+  const removeFieldsSkill= (index, e) => {
     e.preventDefault();
     e.stopPropagation();
     e.nativeEvent.stopImmediatePropagation();
-    let data = [...Education];
+    let data = [...Skill];
     data.splice(index, 1);
-    setLanguage(data);
+    setSkill(data);
   };
 
   const initialValues = {
-    languagestitle:"",
-    description:""
+    skill: "",
+  
   };
 
   const validationSchema = Yup.object({
-    languagestitle: Yup.string(),
-    description: Yup.string(),
+    skill: Yup.string(),
+
   });
 
   return (
@@ -93,17 +83,18 @@ const Languages = () => {
       {({ values }) => (
         <div className="mt-5 p-5 bg-white rounded-md shadow-md">
           <label for="large-input" className="flex justify-between item-center">
-            <h1 className="text-gray-700 font-bold mb-2 text-lg">Languages</h1>
+            <h1 className="text-gray-700 font-bold mb-2 text-lg">Relevant Skills</h1>
 
-            <span onClick={() => setDisplayLanguage((Prev) => !Prev)}>
-              {displayLanguage ? (
-                <svg 
-                className="w-9 h-9"
-                viewBox="0 0 52 51" 
-                fill="none" 
-                xmlns="http://www.w3.org/2000/svg">
-                <path d="M13.184 38.0932C20.1477 45.1553 31.5771 45.2356 38.6392 38.2719C45.7013 31.3082 45.7816 19.8788 38.8179 12.8167C31.8542 5.75453 20.4248 5.67431 13.3627 12.638C6.30052 19.6017 6.2203 31.0311 13.184 38.0932ZM21.9069 19.3803L26.0143 23.5458L30.1798 19.4384C30.7053 18.9202 31.5708 18.9263 32.089 19.4518C32.6071 19.9773 32.6011 20.8427 32.0756 21.3609L27.9101 25.4683L32.0175 29.6338C32.5357 30.1593 32.5296 31.0248 32.0041 31.543C31.4786 32.0612 30.6131 32.0551 30.095 31.5296L25.9875 27.3641L21.822 31.4715C21.2965 31.9897 20.4311 31.9836 19.9129 31.4581C19.3947 30.9326 19.4008 30.0671 19.9263 29.549L24.0918 25.4415L19.9844 21.276C19.4662 20.7505 19.4723 19.8851 19.9978 19.3669C20.5232 18.8487 21.3887 18.8548 21.9069 19.3803Z" fill="#FE0000" fill-opacity="0.69"/>
-                </svg>
+            <span onClick={() => setDisplaySkill((Prev) => !Prev)}>
+              {displaySkill ? (
+            <svg className="w-9 h-9" 
+                  viewBox="0 0 52 52" 
+                  fill="none" 
+                  xmlns="http://www.w3.org/2000/svg">
+            <path d="M13.183 38.6381C20.1467 45.7003 31.5761 45.7805 38.6382 38.8168C45.7004 31.8531 45.7806 20.4237 38.8169 13.3616C31.8532 6.29945 20.4238 6.21923 13.3617 13.1829C6.29954 20.1466 6.21932 31.576 13.183 38.6381ZM21.9059 19.9252L26.0134 24.0907L30.1789 19.9833C30.7044 19.4651 31.5698 19.4712 32.088 19.9967C32.6062 20.5222 32.6001 21.3877 32.0746 21.9058L27.9091 26.0133L32.0165 30.1788C32.5347 30.7043 32.5286 31.5697 32.0031 32.0879C31.4776 32.6061 30.6122 32.6 30.094 32.0745L25.9866 27.909L21.821 32.0164C21.2956 32.5346 20.4301 32.5285 19.9119 32.003C19.3937 31.4775 19.3998 30.6121 19.9253 30.0939L24.0908 25.9865L19.9834 21.821C19.4652 21.2955 19.4713 20.43 19.9968 19.9118C20.5223 19.3936 21.3877 19.3997 21.9059 19.9252Z" fill="#FE0000" fill-opacity="0.69"/>
+            </svg>
+            
+               
               ) : (
                 <svg
                   className="w-7 h-7 "
@@ -121,10 +112,10 @@ const Languages = () => {
           </label>
 
           {/*  Dynamic form for experience */}
-          <div className={!displayLanguage ? "hidden" : "block"}>
-            {Language.map((input, index) => (
+          <div className={!displaySkill ? "hidden" : "block"}>
+            {Skill.map((input, index) => (
               <Form
-                // onSubmit={submit}
+                onSubmit={submit}
                 //   className="p-5 mt-5 border bg-white rounded-md text-sm laptop:text-md desktop:text-lg"
                 className="max-w-7xl mx-auto mt-5 p-5 bg-white rounded-md shadow-md"
               >
@@ -132,7 +123,7 @@ const Languages = () => {
                   className="flex flex-row mb-5"
                   onClick={() => onDropDwon(input.id)}
                 >
-                  {input.languagestitle ? input.languagestitle : "(Not Specified)"}
+                  {input.skill ? input.skill : "(Not Specified)"}
                   <span className="ml-auto">
                     {!input.isShow ? (
                       <svg
@@ -173,55 +164,30 @@ const Languages = () => {
                 <div className={!input.isShow ? "hidden" : "block"}>
                   <div key={index} className="mb-3 ">
                     <div className="grid gap-6 mb-6 laptop:grid-cols-2">
-                      <div>
                         <label
-                          for="languagestitle"
+                          for="skill"
                           // className="block mb-2 text-sm font-medium dark:text-black"
                           className="block text-gray-700 font-bold mb-2"
                         >
-                          Language <span className="text-red-700">*</span>
+                          Skill <span className="text-red-700">*</span>
                         </label>
                         <Field
                           className="w-full border border-gray-400 p-2 rounded-lg"
                           // className="block w-full border p-2.5 text-sm border-gray-300 rounded-lg focus:outline-none focus:border-blue-600 focus:ring-blue-600 focus:ring-1 bg-gray-50 sm:text-md dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                          name="languagestitle"
-                          placeholder="Languages Title"
-                          value={input.languagestitle}
+                          name="skill"
+                          placeholder="Your Relevant Skill "
+                          value={input.skill}
                           onChange={(event) =>
-                            handleLanguageChange(index, event)
+                            handleSkillChange(index, event)
                           }
                         ></Field>
-                        <ErrorMessage name="languagestitle" className='text-red-500 text-xs italic'/>
-                      </div>
-        
-                    </div>
-                    <div className="w-full">
-                      <label
-                        for="description"
-                        className="block text-gray-700 font-bold mb-2"
-
-                        //   className="block mb-2 text-sm font-medium dark:text-black"
-                      >
-                        Description <span className="text-red-700">*</span>
-                      </label>
-                      <Field
-                        as="textarea"
-                        value={input.description}
-                        onChange={(event) =>
-                          handleLanguageChange(index, event)
-                        }
-                        type="text"
-                        name="description"
-                        className="w-full border border-gray-400 p-2 rounded-lg"
-                        placeholder=""
-                      />
-                      <ErrorMessage name="description" className='text-red-500 text-xs italic'/>
+                        <ErrorMessage name="skill" className='text-red-500 text-xs italic'/>
                     </div>
                   </div>
                 </div>
 
                 <button
-                  onClick={(e) => removeFieldsLanguage(index, e)}
+                  onClick={(e) => removeFieldsSkill(index, e)}
                   class="  px-5 py-2  rounded-md  overflow-hidden group bg-red-600 relative hover:bg-gradient-to-r hover:from-red-800 hover:to-red-600 text-white  hover:ring-offset-2 hover:ring-red-600 transition-all ease-out duration-300"
                 >
                   <span class="absolute right-0 w-8 h-32 -mt-12 transition-all duration-1000 transform translate-x-12 bg-white opacity-10 rotate-12 group-hover:-translate-x-40 ease"></span>
@@ -230,12 +196,12 @@ const Languages = () => {
               </Form>
             ))}
           </div>
-          {Language.length >= 0 && displayLanguage && (
+          {Skill.length >= 0 && displaySkill && (
             <div
               onClick={addFieldsSkill}
               className="m-2 w-full cursor-pointer text-blue-900 hover:text-blue-500 font-bold text-left"
             >
-              {Language.length == 0 ? "+ Add language" : "+ Add more language"}
+              {Skill.length == 0 ? "+ Add skill" : "+ Add more skill"}
             </div>
           )}
         </div>
@@ -244,4 +210,4 @@ const Languages = () => {
   );
 };
 
-export default Languages;
+export default Skill;

@@ -2,11 +2,31 @@
 import secureLocalStorage from 'react-secure-storage'
 import { usePathname } from "next/navigation";
 import Link from 'next/link';
+import { useDispatch } from 'react-redux';
+import { setCurrentUser } from '@/store/features/auth/authSlice';
+import { useGetUserQuery } from '@/store/features/user/userApiSlice';
+import { useEffect } from 'react';
 
 export default function ProfileAside() {
-    const getuser = secureLocalStorage.getItem("user")
-    const profile = JSON.parse(getuser)
+    const dispatch = useDispatch();
     const pathname = usePathname();
+
+    const {
+        data: user,
+        isLoading,
+        isSuccess,
+        isError,
+        error,
+    } = useGetUserQuery();
+
+    console.log("user in nav: ", user);
+
+    useEffect(() => {
+        if (isSuccess) {
+            dispatch(setCurrentUser(user));
+        }
+    }, [user]);
+
     try {
         return (
             <div>
@@ -16,21 +36,19 @@ export default function ProfileAside() {
                         <path clip-rule="evenodd" fill-rule="evenodd" d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z"></path>
                     </svg>
                 </button>
-                <aside id="logo-sidebar" className="rounded-tr-xl mt-10 fixed top-24 left-0 z-40 w-64 h-screen pt-20 transition-transform -translate-x-full bg-blue-800 border-r border-gray-200 sm:translate-x-0 dark:bg-gray-800 dark:border-gray-700" aria-label="Sidebar">
+                <aside id="logo-sidebar" className="rounded-tr-xl mt-10 fixed top-24 left-0 z-40 w-auto h-screen pt-20 transition-transform -translate-x-full bg-blue-800 border-r border-gray-200 sm:translate-x-0 dark:bg-gray-800 dark:border-gray-700" aria-label="Sidebar">
                     <div className="h-full pb-4 overflow-y-auto bg-blue-800 dark:bg-gray-800">
-                        <div className='flex mx-3 item-center justify-start gap-5 mb-10'>
-                            <img className='w-[62px] rounded-[50%]' src={profile ? `${profile.avatar}` : `https://schooloflanguages.sa.edu.au/wp-content/uploads/2017/11/placeholder-profile-sq.jpg`} />
+                        <div className='flex px-5 item-center justify-start gap-5 mb-10'>
+                            <img className='w-[62px] rounded-[50%]' src={user ? `${user.data.profile}` : `https://schooloflanguages.sa.edu.au/wp-content/uploads/2017/11/placeholder-profile-sq.jpg`} />
                             <div className='text-white dark:text-white'>
-                                <div>User's name</div>
-                                {/* <div>{profile ? `${profile.name}` : "Profile - name"}</div> */}
-                                {/* <div>{profile ? `${profile.email}` : "email - user"}</div> */}
-                                <div>User's email</div>
+                                <div>{user ? `${user.data.username}` : "Profile - name"}</div>
+                                <div>{user ? `${user.data.email}` : "email - user"}</div>
                             </div>
                         </div>
 
                         <div className="sidebar font-medium">
                             <div>
-                                <Link href="/generate" className={
+                                <Link href={`${user ? '/generate' : 'login'}`} className={
                                     pathname === "/information"
                                         ? 'text-white dark:text-white flex items-center bg-[#00000048] border-r-white border-r-8 hover:bg-[#00000048] hover:border-r-white hover:border-r-8'
                                         : 'hover:bg-[#00000048] hover:border-r-white hover:border-r-8 bg-none text-white flex items-center'
